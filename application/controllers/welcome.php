@@ -10,7 +10,6 @@ class Welcome extends Controller {
 	function index()
 	{
 		$this->load->view('welcome_message');
-		var_dump($this->user);
 	}
 }
 
