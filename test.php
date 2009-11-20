@@ -39,7 +39,7 @@ function add_test($file, &$test) {
 	elseif (preg_match('/_helper/', $file)) {
 		$view = preg_replace('#' . ROOT . 'application/tests/helpers/([a-zA-Z0-9_\-])_helper.php#', '$1', $file);
 		$view = implode('/', explode('_', $view));
-		$implementation = ROOT . 'application/helpers/'.$view.'.php';
+		$implementation = ROOT . 'application/helpers/'.$view.'_helper.php';
 	}
  
 	if (file_exists($implementation)) {
@@ -109,7 +109,7 @@ if (!isset($_GET['test'])) {
 		if (preg_match('/_controller/', $value)) { $files[$key] = ROOT . 'application/tests/controllers/' . $value; }
 		if (preg_match('/_view/', $value)) { $files[$key] = ROOT . 'application/tests/views/' . $value; }
 		if (preg_match('/_library/', $value)) { $files[$key] = ROOT . 'application/tests/libraries/' . $value; }
-	if (preg_match('/_helper/', $value)) { $files[$key] = ROOT . 'application/tests/helpers/' . $value; }
+		if (preg_match('/_helper/', $value)) { $files[$key] = ROOT . 'application/tests/helpers/' . $value; }
 	}
 
 	array_walk($files, 'prepare_array');
