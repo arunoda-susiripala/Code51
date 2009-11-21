@@ -104,4 +104,8 @@ class User{
 	public static function by_session($session){
 		throw new Exception("Not Implemented Yet!");
 	}
+	
+	public function delete(){
+		Metadata::delete('%',"user.{$this->id}");
+	}
 }

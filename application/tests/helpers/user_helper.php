@@ -81,4 +81,17 @@ class User_helper extends CodeIgniterUnitTestCase{
 		$this->assertTrue($user_g->check_password('abc.com'));
 		$this->assertFalse($user_g->check_password('abc.codffdm'));
 	}
+	
+	function test_delete(){
+		$user=new User();
+		$rand=md5(rand());
+		$user->username='user_'.$rand;
+		$user->fullname='This is the name';
+		$user->email="$rand@email.com";
+		$user->save();
+		
+		$this->assertNotNull(User::by_username($user->username));
+		$user->delete();
+		$this->assertNull(User::by_username($user->username));
+	}
 }

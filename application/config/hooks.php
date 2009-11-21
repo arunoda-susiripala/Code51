@@ -10,6 +10,13 @@
 |
 */
 
+$hook['pre_controller'] = array(
+                                'class'    => 'Auth',
+                                'function' => 'init',
+                                'filename' => 'auth.php',
+                                'filepath' => 'libraries',
+                                'params'   => null
+                                );
 
 
 /* End of file hooks.php */
