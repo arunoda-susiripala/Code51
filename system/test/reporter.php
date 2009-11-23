@@ -39,17 +39,9 @@ class HtmlReporter extends SimpleReporter {
      *    @access public
      */
     function paintHeader($test_name) {
-        $this->sendNoCacheHeaders();
-        print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">";
-        print "<html>\n<head>\n<title>$test_name</title>\n";
-        print "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" .
-                $this->_character_set . "\">\n";
-        print "<style type=\"text/css\">\n";
-        print $this->_getCss() . "\n";
-        print "</style>\n";
-        print "</head>\n<body>\n";
-        print "<h1>$test_name</h1>\n";
-        flush();
+        //$this->sendNoCacheHeaders();
+        
+     	//flush();
     }
 
     /**
@@ -87,6 +79,16 @@ class HtmlReporter extends SimpleReporter {
      *    @access public
      */
     function paintFooter($test_name) {
+    	print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">";
+        print "<html>\n<head>\n<title>$test_name</title>\n";
+        print "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" .
+                $this->_character_set . "\">\n";
+        print "<style type=\"text/css\">\n";
+        print $this->_getCss() . "\n";
+        print "</style>\n";
+        print "</head>\n<body>\n";
+        print "<h1>$test_name</h1>\n";
+        
         $colour = ($this->getFailCount() + $this->getExceptionCount() > 0 ? "red" : "green");
         print "<div style=\"";
         print "padding: 8px; margin-top: 1em; background-color: $colour; color: white;";

@@ -45,6 +45,14 @@ class Auth_library extends CodeIgniterUnitTestCase{
 		$lu=Auth::get_logged_in_user();
 		$this->assertEqual($lu->username,$this->user->username);
 		$this->assertEqual($lu->get_id(),$this->user->get_id());
+		Auth::logout();
+	}
+	
+	public function test_authenticate2(){
+		//Auth::logout();
+		$this->assertFalse(Auth::authenticate('test_auth','aaa'));
+		$this->assertFalse(Auth::authenticate('test_auth2','password'));
+		$this->assertNull(Auth::get_logged_in_user());
 	}
 	
 	public function tearDown(){

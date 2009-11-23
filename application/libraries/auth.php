@@ -15,7 +15,11 @@ class Auth{
 	}
 	
 	public static function login($user,$remember=false){
+		if(!session_id()) session_start();
+		else session_regenerate_id();
+		
 		$_SESSION['USER']=$user;
+		
 	}
 	
 	public static function logout(){
