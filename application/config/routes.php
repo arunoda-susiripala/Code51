@@ -43,6 +43,12 @@
 $route['default_controller'] = "welcome";
 $route['scaffolding_trigger'] = "";
 
+//allows to view admin section
+
+$route['admin/([a-z]+)/(.+)']="$1/admin/$2";
+$route['admin/(:any)']="$1/admin";
+$route['admin']="welcome/admin";
+
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
