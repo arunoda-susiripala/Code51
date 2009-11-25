@@ -1,12 +1,6 @@
 <?php
 
-class Welcome extends Controller {
-
-	function Welcome()
-	{
-		parent::Controller();
-		$this->load->language("home","english");	
-	}
+class Welcome extends Site_controller {
 	
 	function index()
 	{

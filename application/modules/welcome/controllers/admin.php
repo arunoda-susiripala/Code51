@@ -1,11 +1,7 @@
 <?php
 
-class Admin extends Controller {
+class Admin extends Admin_controller {
 
-	function Admin()
-	{
-		parent::Controller();	
-	}
 	
 	function index()
 	{
