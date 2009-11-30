@@ -1,7 +1,7 @@
 <?php
 
-class Admin_controller extends Controller{
+class Admin_controller extends Base_controller{
 	public function __construct(){
-		parent::Controller();
+		parent::__construct('admin');
 	}
 }

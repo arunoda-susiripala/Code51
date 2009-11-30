@@ -1,0 +1,8 @@
+1.Template reside inside application folder
+2.there are 2 templates
+	One for admin
+	One for site
+3.Create a method in a controller to load to the views...
+4.inside that method...
+5.load the template there and replace the tag with the views..
+

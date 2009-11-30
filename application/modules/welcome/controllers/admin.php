@@ -2,18 +2,17 @@
 
 class Admin extends Admin_controller {
 
-	
 	function index()
 	{
-		//$this->load->view('welcome_message');
-		echo "This is The admin area..";
+		$this->load->view('welcome_admin');
+		$this->flush();
 	}
 	
 	function abc(){
 		echo "Power House Boss";
 	}
 	
-	function test($var_from){
+	function test($var_from=""){
 		echo "Test Here $var_from";
 	}
 }

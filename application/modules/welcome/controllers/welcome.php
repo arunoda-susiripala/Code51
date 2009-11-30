@@ -1,10 +1,12 @@
 <?php
 
 class Welcome extends Site_controller {
+	private $views=array();
 	
 	function index()
 	{
-		$this->load->view('welcome_message',array("lang"=>$this->lang));
+		$this->load_view('welcome_message',array("lang"=>$this->lang));
+		$this->flush();
 	}
 }
 

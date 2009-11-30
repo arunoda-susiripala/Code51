@@ -1,7 +1,9 @@
 <?php
 
-class Site_controller extends Controller{
+class Site_controller extends Base_controller{
+	
 	public function __construct(){
-		parent::Controller();
+		parent::__construct('site');
 	}
+	
 }
