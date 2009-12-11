@@ -24,8 +24,13 @@ class Base_controller extends Controller{
 	}
 	
 	public function flush(){
-		$template=file(APPPATH."templates/{$this->template}/{$this->context}.php");
-		$template=implode("\n",$template);
+		ob_start();
+		//$template=file(APPPATH."templates/{$this->template}/{$this->context}.php");
+		define('TEMPLATE_PATH',APPPATH."templates/{$this->template}/");
+		include TEMPLATE_PATH."{$this->context}.php";
+		//$template=implode("\n",$template);
+		$template=ob_get_contents();
+		ob_end_clean();
 		$template=str_replace("<code51:module/>",implode("\n",$this->views),$template);
 		echo $template;
 	}

@@ -4,7 +4,7 @@ class Admin extends Admin_controller {
 
 	function index()
 	{
-		$this->load->view('welcome_admin');
+		$this->load_view('welcome_admin');
 		$this->flush();
 	}
 	
